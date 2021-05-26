@@ -1,0 +1,22 @@
+<html>
+<%- include('./partials/head.ejs', {title : 'Blog Details' }) %>
+
+    <body>
+        <%- include('./partials/nav.ejs', {page : null}) %>
+
+            <div class="container my-5">
+                <div class="display-1">
+                    <%= blog.title %>
+                </div>
+                <div class="fs-3 lh-lg">
+                    <%= blog.body %>
+                </div>
+                <div class="text-end">
+                    <a class="btn btn-lg btn-outline-dark" data-doc="<% blog._id %>" >
+                        Delete
+                    </a>
+                </div>
+            </div>
+    </body>
+
+</html>
