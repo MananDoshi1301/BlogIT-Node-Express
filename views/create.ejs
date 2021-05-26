@@ -1,0 +1,26 @@
+<html>
+  <%- include("./partials/head.ejs", {title:'Create Blog'})  %> 
+<body>
+  <%- include("./partials/nav.ejs",{page:'create'}) %> 
+
+  <div class="form container my-5 w-50 text-dark p-5">
+    <h1 class="text-center text-bolder display-3">Create A Blog</h1>
+
+    <form action="/blogs" method="POST" class="fs-4">
+      <label for="title" class="form-label">Blog title:</label>
+      <input type="text" class="form-control mb-3" id="title" name="title" required>
+  
+      <label for="snippet" class="form-label">Blog snippet:</label>
+      <input type="text" class="form-control mb-3" id="snippet" name="snippet" required>
+  
+      <label for="body" class="form-label">Blog body:</label>
+      <textarea id="body" class="form-control mb-3" name="body" required></textarea>
+
+      <div class="d-grid mt-5">
+        <button class="btn btn-secondary fs-3">Post</button>
+      </div>
+    </form>
+  </div>
+</body>
+
+</html>
