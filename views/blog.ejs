@@ -12,11 +12,23 @@
                     <%= blog.body %>
                 </div>
                 <div class="text-end">
-                    <a class="btn btn-lg btn-outline-dark" data-doc="<% blog._id %>" >
+                    <a class="btn btn-lg btn-outline-dark delete" data-doc="<%= blog._id %>" >
                         Delete
                     </a>
                 </div>
             </div>
+            <script>
+                const trash = document.querySelector('.delete');                
+                trash.addEventListener('click', (e)=>{
+                    const endpoint = `/blogs/${trash.dataset.doc}`;                    
+                    fetch(endpoint,{
+                        method: 'DELETE'
+                    })
+                    .then(response=>response.json())
+                    .then(data=>window.location.href = data.redirect)
+                    .catch(err=>console.log(err.message));
+                })
+            </script>
     </body>
 
 </html>
