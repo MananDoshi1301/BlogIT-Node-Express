@@ -1,1 +1,13 @@
-<h1>404 - Page not Found!</h1>
+<html>
+
+  <%- include("./partials/head.ejs", {title:'404 Not Found'})  %> 
+  <body>
+    <%- include("./partials/nav.ejs",{page:'Error'}) %>               
+    
+    <h1 class="d-flex align-items-center justify-content-center display-3">404 - Page not Found!</h1>
+    <div class="position-absolute bottom-0 start-0 end-0">
+      <%- include("./partials/footer.ejs") %>          
+    </div>
+  </body>
+
+</html>
