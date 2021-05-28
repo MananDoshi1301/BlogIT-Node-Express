@@ -1,13 +1,14 @@
 // blog_index, blog_details, blog_create_get, blog_create_post, blog_delete
 
 const Blog = require('../models/blog');
+const moment = require('moment');
 
 const blog_index = (req, res) => {
   Blog.find()
     .sort({ createdAt: -1 })
     .then((result) => {
       blogs = result;
-      res.render('index', { blogs });
+      res.render('index', { blogs, moment: moment });
     })
     .catch((err) => console.log(err.message));
 };
@@ -16,7 +17,7 @@ const blog_details = (req, res) => {
   const id = req.params.id;
   Blog.findById(id)
     .then((result) => {
-      res.render('blog', { blog: result });
+      res.render('blog', { blog: result, moment: moment });
     })
     .catch((err) => console.log(err.message));
 };

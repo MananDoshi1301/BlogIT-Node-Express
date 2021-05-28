@@ -1,15 +1,49 @@
 <html>
-  <%- include("./partials/head.ejs", {title:'About Us'})  %> 
+<%- include("./partials/head.ejs", {title:'About Us'}) %>
+
   <body>
-    <%- include("./partials/nav.ejs",{page:'about'}) %>     
-    <h1 class="display-1 text-center mt-5 animate__animated animate__backInDown">About Us</h1>
-    <div class="container w-75 mt-5 animate__animated animate__slideInLeft animate__delay-800ms">      
-      <div class="content fs-3 text-center">
-        This is a blog website created using Node.JS, Express.JS, EJS.
-        It is a practice website for portfolio developed by <a href="https://github.com/MananDoshi1301" target="_blank" rel="noreferrer" class="fst-italic fw-bold text-secondary text-decoration-underline" style="text-decoration: none;">Manan Doshi</a>. For information about the website's code visit <a href="https://github.com/MananDoshi1301/BlogIT-Node-Express" target="_blank" rel="noopener noreferrer" style="text-decoration: none;" class="fst-italic fw-bold text-secondary text-decoration-underline">Github</a>
+    <%- include("./partials/nav.ejs",{page:'about'}) %>
+      <h1 class="display-1 text-center mt-5 animate__animated animate__backInDown">About Us</h1>
+      <div class="container w-75 mt-5">
+
+        <div class="animate__animated animate__slideInLeft animate__delay-800ms">
+          <div class="content fs-3 text-center">
+            This is a practice blog website for portfolio developed by <a href="https://github.com/MananDoshi1301"
+              target="_blank" rel="noreferrer" class="fst-italic fw-bold text-secondary text-decoration-underline"
+              style="text-decoration: none;">Manan Doshi</a>.
+            For information about the website's code visit <a
+              href="https://github.com/MananDoshi1301/BlogIT-Node-Express" target="_blank" rel="noopener noreferrer"
+              style="text-decoration: none;"
+              class="fst-italic fw-bold text-secondary text-decoration-underline">Github</a>
+          </div>
+        </div>
+
+          <div class="stack my-5 animate__animated animate__slideInUp animate__delay-800ms">
+            <div class="fs-2 text-center fs-bold">TechStack Used</div>
+            <table class="table table-dark table-sm table-striped table-hover text-center mt-3">
+              <thead>
+                <tr>
+                  <th class="scope fs-4">Stack</th>
+                  <th class="scope fs-4">Usage</th>
+                </tr>
+              </thead>
+              <tbody>
+                <% tableItem.map((doc)=>{ %>
+                  <tr>
+                    <td class="">
+                      <%= doc.stack %>
+                    </td>
+                    <td class="">
+                      <%= doc.purpose %>
+                    </td>
+                  </tr>
+                  <% }) %>
+              </tbody>
+            </table>
+          </div>
       </div>
-    </div>
-    <%- include("./partials/footer.ejs") %>      
+      <%- include("./partials/footer.ejs") %>
 
   </body>
+
 </html>

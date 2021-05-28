@@ -8,6 +8,10 @@
                 <div class="display-1  animate__animated animate__slideInDown">
                     <%= blog.title %>
                 </div>
+                <div class="fs-5 text-danger my-3 fw-bolder animate__animated animate__slideInRight animate__delay-800ms"> 
+                    <% const date = new Date(blog.createdAt) %> 
+                    - <%= moment(date.toISOString()).format('LLLL') %> 
+                </div>
                 <div class="fs-3 lh-lg animate__animated animate__slideInLeft animate__delay-800ms">
                     <%= blog.body %>
                 </div>
