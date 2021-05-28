@@ -6,19 +6,19 @@
 
 
       <div class="container-fluid mt-2">
-        <h1 class="display-1 text-center mt-5 mb-3">Trending Blogs</h1>
+        <h1 class="display-1 text-center mt-5 mb-3 animate__animated animate__backInDown">Trending Blogs</h1>
         <div class="content mx-3">
           <% if(blogs.length> 0){ %>
             <% blogs.map((blog)=>{ %>
-              <div class="blogs mb-3 p-3 border border-5 border-dark rounded rounded-3">
+              <div class="blogs mb-3 p-3 border border-5 border-dark rounded rounded-3 animate__animated animate__fadeInDown">
                 <a href="/blogs/<%= blog._id %>" class="text-reset" style="text-decoration: none;">
-                <div class="display-4 fw-bolder border-start border-5 border-primary ps-2">
-                  Title: <%= blog.title %>
-                </div>
-                <div class="fs-5 ps-2 border-start border-5 border-warning lh-sm">
-                  <%= blog.snippet %>
-                </div>
-              </a>
+                  <div class="display-4 fw-bolder border-start border-5 border-primary ps-2">
+                    Title: <%= blog.title %>
+                  </div>
+                  <div class="fs-5 ps-2 border-start border-5 border-warning lh-sm">
+                    <%= blog.snippet %>
+                  </div>
+                </a>
               </div>
               <% }) %>
                 <% } else{ %>
@@ -28,6 +28,7 @@
                   <% } %>
         </div>
       </div>
+      
   </body>
 
 </html>

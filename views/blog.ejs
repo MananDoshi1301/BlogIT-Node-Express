@@ -5,13 +5,16 @@
         <%- include('./partials/nav.ejs', {page : null}) %>
 
             <div class="container my-5">
-                <div class="display-1">
+                <div class="display-1  animate__animated animate__slideInDown">
                     <%= blog.title %>
                 </div>
-                <div class="fs-3 lh-lg">
+                <div class="fs-3 lh-lg animate__animated animate__slideInLeft animate__delay-800ms">
                     <%= blog.body %>
                 </div>
-                <div class="text-end">
+                <div class="d-flex justify-content-between mt-5  animate__animated animate__slideInUp">
+                    <a class="btn btn-lg btn-outline-dark" href="/blogs" >
+                        Back
+                    </a>
                     <a class="btn btn-lg btn-outline-dark delete" data-doc="<%= blog._id %>" >
                         Delete
                     </a>
